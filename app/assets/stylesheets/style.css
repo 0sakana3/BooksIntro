@@ -1,0 +1,79 @@
+
+/* ヘッダー */
+
+header{
+  background-color: #73705F;
+  height: 65px;
+}
+
+.main-header{
+  display: flex;
+  justify-content: space-between;
+  height: 65px;
+  padding: 0 20px;
+  align-items: center;
+}
+
+.title{
+  font-size: 23px;
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1.8px;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+.post-button a{
+  line-height: 32px;
+  text-decoration: none;
+  color: #3A3736;
+  font-size: 16px;
+}
+
+/* トップページ */
+
+.top_main{
+  background-color: #E6E5E3;
+  height: calc(100vh - 65px);
+  display: flex;
+  justify-content: center;
+}
+
+h1{
+  font-family: 'Roboto', sans-serif;
+  color: #73705F;
+  font-size: 24px;
+  padding-left: 30px;
+}
+
+.inner{
+  height: calc(100vh - 65px);
+  width: 70%;
+  padding: 100px 0;
+  background-color: #E6E5E3;
+}
+
+.inner_content{
+  display: flex;
+  justify-content: space-around;
+}
+
+.greeting ul li{
+  color: #423B35;
+  text-align: center;
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+.login_button{
+  background-color: #73705F;
+  color: #F2F2F3;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 25px 10px;
+}
