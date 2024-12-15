@@ -1,2 +1,30 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<main class="top_main">
+  <div class="inner">
+    <h1 >Books Intro</h1>
+    <div class="inner_content">
+    <div class="inner_right">
+      <div class="greeting"> 
+        <ul>
+          <li>
+        <%= "ここはあなたの読んだ本を紹介するサイトです。" %>
+          </li>
+          <li>
+        <%= "面白かった本、読んだ本を登録できます。"%>
+          </li>
+          <li>
+        <%= "紹介された本を読んで感想を投稿しよう。"%>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="inner_left">
+      <div class="login_button">
+        <%= '新規登録' %>
+      </div>
+    </div>
+    </div>
+  </div>
+    <div class="card__wrapper">
+      <%# 投稿機能実装後、部分テンプレートで投稿一覧を表示する %>
+    </div>
+</main>
