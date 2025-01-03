@@ -77,3 +77,10 @@ h1{
   text-align: center;
   margin: 25px 10px;
 }
+
+.sign-up, .login {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+
