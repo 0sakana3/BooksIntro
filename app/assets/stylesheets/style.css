@@ -67,7 +67,6 @@ h1{
 
 .login_button{
   background-color: #73705F;
-  color: #F2F2F3;
   border-radius: 5px;
   width: 100px;
   height: 40px;
@@ -80,7 +79,7 @@ h1{
 
 .sign-up, .login {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #F2F2F3;
 }
 
 
