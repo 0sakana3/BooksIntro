@@ -2,6 +2,7 @@
   <div class="inner">
     <h1 >Books Intro</h1>
     <div class="inner_content">
+      <div class="inner_right">
       <div class="greeting"> 
         <ul>
           <li>
@@ -15,6 +16,16 @@
           </li>
         </ul>
       </div>
+    </div>
+     <div class="inner_left">
+        <div class="login_button">
+      <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+       </div>
+       <div class="login_button">
+      <%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+       </div>
+      </div>
+    </div>
     </div>
   </div>
     <div class="card__wrapper">
