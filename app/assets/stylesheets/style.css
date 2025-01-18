@@ -30,6 +30,35 @@ header{
   align-items: flex-end;
 }
 
+.login_name{
+  width: 100px;
+  height: 30px;
+  margin: 25px 10px;
+  }
+
+  .user-nickname{
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+
+  .logout_button{
+    background-color:  #E6E5E3;
+    border:#FFFFFF 2px solid;
+      border-radius: 5px;
+      width: 100px;
+      height: 30px;
+      align-items: center;
+      text-align: center;
+      margin: 25px 10px;
+      }
+
+      .logout {
+        text-decoration: none;
+        color: #73705F;
+        text-align: center 
+      }
+      
+
 /* ページ */
 
 body {
@@ -165,7 +194,6 @@ h2{
   color: #73705F;
 }
 
-
 .login-btn, .register-btn{
   width: 30%;
   margin: 0 auto;
@@ -186,4 +214,16 @@ h2{
   border: 1px solid #73705F;
   color: #fff;
   line-height: 48px;
+}
+
+/* マイページ */
+
+.inner_page{
+  background-color: #FFFFFF;
+  margin-top:  80px ;
+  padding: 10px 50px ;
+  width: 80%;
+  height: 500px;
+  border-radius: 0px 0px 100px 0px;  
+  box-shadow: 2px 2px 4px gray;
 }
