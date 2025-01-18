@@ -2,8 +2,14 @@
 
 <div class="inner_login">
 <%= form_with model: @user, url: new_user_session_path, local: true do |f| %>
-  <%= render 'devise/shared/error_messages', model: f.object %>
+
 <h2>ログイン</h2>
+     
+       <div class="inner_content">
+          <div class="error-message">
+            <%= flash[:alert] %>
+          </div>
+       </div>
 
     <div class="form-group">
     <div class='form-text-wrap'>
