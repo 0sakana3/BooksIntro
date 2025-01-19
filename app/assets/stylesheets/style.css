@@ -236,3 +236,14 @@ h2{
   border-radius: 0px 0px 0px 100px ;  
   box-shadow: 2px 2px 4px gray;
 }
+
+.user_greeting{
+  color: #423B35;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.user_link{
+  color: #423B35;
+  border: none;
+}

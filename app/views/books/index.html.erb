@@ -29,8 +29,13 @@
     </div>
     <% else %>
   <div class="inner_page">
+    <div class="user_greeting">
+      <%= "こんにちは、" %>
+      <%= link_to current_user.nickname, "#", class: "user_link" %> 
+      <%= "さん" %>
+    </div>
   </div>
-
+ç
       <% end %>
   </div>
   </div>
