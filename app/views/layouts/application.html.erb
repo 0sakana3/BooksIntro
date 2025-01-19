@@ -13,9 +13,7 @@
   <body>
     <header class="header">
       <div class="main-header">
-        <div class="title">
-          BOOKs Intro
-        </div>
+        <%= link_to 'BOOKs Intro', root_path, class: "title" %>
       <ul class='hed_lists'>
       <% if user_signed_in? %>
       <div class="login_name">
