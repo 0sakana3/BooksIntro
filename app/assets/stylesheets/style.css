@@ -4,13 +4,14 @@
 header{
   background-color: #73705F;
   height: 65px;
+  width: 100vw;
 }
 
 .main-header{
   display: flex;
   justify-content: space-between;
   height: 65px;
-  padding: 0 20px;
+  padding: 0 100px;
   align-items: center;
 }
 
@@ -23,51 +24,104 @@ header{
   text-decoration: none;
 }
 
-.post-button a{
-  line-height: 32px;
-  text-decoration: none;
-  color: #3A3736;
-  font-size: 16px;
+.hed_lists {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+}
+
+.login_name{
+  width: 100px;
+  height: 30px;
+  margin: 25px 10px;
+  }
+
+  .user-nickname{
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+
+  .logout_button{
+    background-color:  #E6E5E3;
+    border:#FFFFFF 2px solid;
+      border-radius: 5px;
+      width: 100px;
+      height: 30px;
+      align-items: center;
+      text-align: center;
+      margin: 25px 10px;
+      }
+
+      .logout {
+        text-decoration: none;
+        color: #73705F;
+        text-align: center 
+      }
+      
+
+/* ページ */
+
+body {
+  height: 100%;
+  margin: 0;
+  background-color: #E6E5E3;
+}
+
+.main{
+  min-width: 800px;
+  display: flex;
+  justify-content: center;
 }
 
 /* トップページ */
 
-.top_main{
-  background-color: #E6E5E3;
-  height: calc(100vh - 65px);
+.inner{
+  background-color: #FFFFFF;
+  margin-top:  80px ;
+  padding: 10px 50px ;
+  height: 350px;
+  width: 80%;
+  border-radius: 0px 0px 0px 100px ;
+  box-shadow: 2px 2px 4px gray;
+}
+
+.inner_content{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  width: 100%;
 }
 
 h1{
   font-family: 'Roboto', sans-serif;
   color: #73705F;
   font-size: 24px;
-  padding-left: 30px;
+  margin: 50px 0 10px 50px;
 }
 
-.inner{
-  height: calc(100vh - 65px);
-  width: 70%;
-  padding: 100px 0;
-  background-color: #E6E5E3;
-}
-
-.inner_content{
-  display: flex;
-  justify-content: space-around;
-}
-
-.greeting ul li{
-  color: #423B35;
+.greeting{
+  padding-top: 10px;
   text-align: center;
+  color: #423B35;
+}
+
+ul li{
+  color: #B22222;
   list-style: none;
-  margin-bottom: 5px;
+  margin: 5px 5px;
+  padding-bottom: 10px;
+}
+
+.sign-up, .login {
+  text-decoration: none;
+  color: #F2F2F3;
+}
+
+.inner_left{
+  margin: 50px 0;
 }
 
 .login_button{
   background-color: #73705F;
-  color: #F2F2F3;
   border-radius: 5px;
   width: 100px;
   height: 40px;
@@ -76,4 +130,120 @@ h1{
   align-items: center;
   text-align: center;
   margin: 25px 10px;
+}
+
+/* 新規登録・ログインページ */
+
+.inner_registration,.inner_login{
+  background-color: #FFFFFF;
+  margin-top:  80px ;
+  padding: 10px 50px ;
+  width: 80%;
+  border-radius: 0px 0px 0px 100px ;
+  box-shadow: 2px 2px 4px gray;
+}
+
+h2{
+  font-family: 'Roboto', sans-serif;
+  color: #73705F;
+  font-size: 24px;
+  margin: 50px 0 10px 50px;
+}
+
+.field{
+  color: #73705F;
+}
+
+.form-group {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.form-text-wrap {
+  width: 100%;
+  height: 20%;
+}
+
+.form-text {
+  font-size: 14px;
+  font-weight: bold;
+  color: #423B35;
+}
+
+.indispensable{
+  font-size: 10px;
+  color: #73705F;
+}
+
+.input-default{
+  width: 100%;
+  margin-top: 5px;
+  height: 20px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}
+
+.info-text{
+  font-size: 16px;
+  color: #73705F;
+}
+
+.login-btn, .register-btn{
+  width: 30%;
+  margin: 0 auto;
+  background: #73705F;
+  border: 1px solid #73705F;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 20px 0 60px 0;
+  display:flex;
+  justify-content:center;
+  text-align: center; 
+}
+
+.login_brown_btn, .register_brown_btn{
+  width: 100%;
+  height: 100%;
+  background: #73705F;
+  border: 1px solid #73705F;
+  color: #fff;
+  line-height: 48px;
+}
+
+.error-message{
+  color: #B22222;
+  margin: 10px;
+  border: none;
+}
+
+/* マイページ */
+
+.inner_page{
+  background-color: #FFFFFF;
+  margin-top:  80px ;
+  padding: 10px 50px ;
+  width: 80%;
+  height: 500px;
+  border-radius: 0px 0px 0px 100px ;  
+  box-shadow: 2px 2px 4px gray;
+}
+
+.user_greeting{
+  color: #423B35;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.user_link{
+  color: #423B35;
+  border: none;
 }

@@ -1,27 +1,44 @@
-<main class="top_main">
+<main class="main">
+     <% if !user_signed_in? %>
   <div class="inner">
-    <h1 >Books Intro</h1>
+      <h1 >Books Intro</h1>
     <div class="inner_content">
     <div class="inner_right">
       <div class="greeting"> 
-        <ul>
-          <li>
-        <%= "ここはあなたの読んだ本を紹介するサイトです。" %>
+        <ul class="greeting">
+          <li class="greeting">
+        <%= "ここはあなたの読んだ本を紹介できるサイトです。" %>
           </li>
-          <li>
+          <li class="greeting">
         <%= "面白かった本、読んだ本を登録できます。"%>
           </li>
-          <li>
-        <%= "紹介された本を読んで感想を投稿しよう。"%>
+          <li class="greeting">
+        <%= "紹介された本を読んで感想を投稿する事ができます。"%>
           </li>
         </ul>
       </div>
     </div>
-    <div class="inner_left">
-      <div class="login_button">
-        <%= '新規登録' %>
+     <div class="inner_left">
+        <div class="login_button">
+      <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+       </div>
+       <div class="login_button">
+      <%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+       </div>
       </div>
     </div>
+    <% else %>
+  <div class="inner_page">
+    <div class="user_greeting">
+      <%= "こんにちは、" %>
+      <%= link_to current_user.nickname, "#", class: "user_link" %> 
+      <%= "さん" %>
+    </div>
+  </div>
+ç
+      <% end %>
+  </div>
+  </div>
     </div>
   </div>
     <div class="card__wrapper">
