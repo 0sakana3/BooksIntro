@@ -1,7 +1,8 @@
 class BooksController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
+  before_action :authenticate_user!, only: [:create]
   def index
-    @books = Book.all.order(created_at: :desc).page(params[:page]).per(10)
+    @books = Book.all.order(created_at: :desc)
   end
   def new
     @book = Book.new
@@ -9,6 +10,7 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
+    @book.user = current_user 
     if @book.save
       redirect_to root_path
     else
@@ -24,7 +26,7 @@ class BooksController < ApplicationController
     end
 
     def book_params
-      params.require(:book).permit(:title, :publisher, :genre_id, :detail, :recommended, :url)
+      params.require(:book).permit(:image, :title, :publisher, :genre_id, :detail, :recommended, :url)
     end
   end
 end
