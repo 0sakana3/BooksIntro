@@ -132,7 +132,7 @@ ul li{
   margin: 25px 10px;
 }
 
-/* 新規登録・ログインページ */
+/* 新規登録・ログインページフォーム */
 
 .inner_registration,.inner_login{
   background-color: #FFFFFF;
@@ -168,7 +168,7 @@ h2{
 }
 
 .form-text {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   color: #423B35;
 }
@@ -246,4 +246,25 @@ h2{
 .user_link{
   color: #423B35;
   border: none;
+}
+
+/* 紹介ページフォーム */
+.img-upload{
+  font-size: 14px;
+  color: #423B35;
+}
+
+.upload-text{
+  font-size: 14px;
+  color: #423B35;
+  margin-bottom: 10px;
+}
+
+.img-upload{
+  margin-bottom: 20px;
+}
+
+.click-upload{
+  font-size: 14px;
+  color: #73705F;
 }
