@@ -69,6 +69,9 @@ body {
 
 .main{
   min-width: 800px;
+}
+
+.top_page{
   display: flex;
   justify-content: center;
 }
@@ -83,6 +86,7 @@ body {
   width: 80%;
   border-radius: 0px 0px 0px 100px ;
   box-shadow: 2px 2px 4px gray;
+
 }
 
 .inner_content{
@@ -268,3 +272,13 @@ h2{
   font-size: 14px;
   color: #73705F;
 }
+
+/* トップ下部 */
+.under_page{
+  background-color: #FFFFFF;
+  margin-top:  40px ;
+  padding: 10px 50px ;
+  width: 100%;
+  box-shadow: 2px 2px 4px gray;
+}
+
