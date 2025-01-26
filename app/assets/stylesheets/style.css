@@ -80,13 +80,12 @@ body {
 
 .inner{
   background-color: #FFFFFF;
-  margin-top:  80px ;
+  margin-top:  40px ;
   padding: 10px 50px ;
   height: 350px;
   width: 80%;
   border-radius: 0px 0px 0px 100px ;
   box-shadow: 2px 2px 4px gray;
-
 }
 
 .inner_content{
@@ -140,7 +139,7 @@ ul li{
 
 .inner_registration,.inner_login{
   background-color: #FFFFFF;
-  margin-top:  80px ;
+  margin-top:  40px ;
   padding: 10px 50px ;
   width: 80%;
   border-radius: 0px 0px 0px 100px ;
@@ -281,4 +280,3 @@ h2{
   width: 100%;
   box-shadow: 2px 2px 4px gray;
 }
-
