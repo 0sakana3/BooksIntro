@@ -46,23 +46,26 @@
 
     <%# 投稿機能実装後、部分テンプレートで投稿一覧を表示する %>
     <div class="under_page">
-      <div class="books-list">
+    <div class="introduction">
+      <P>紹介された図書</P>
+    </div>
+      <div class="books-lists">
          <% if @books.present? %>
           <% @books.each do |book| %>
-      <li class='list'>
-        <%= link_to books_path(book.id) do %>
+      <li class='books-list'>
+        <%= link_to books_path(book.id),class:"book-link" do %>
         <div class='item-img-content'>
-        <%= image_tag book.image.variant(resize_to_fill: [250,250]), class: 'book-image' if book.image.attached? %>
+        <%= image_tag book.image.variant(resize_to_fill: [200,200]), class: 'book-image' if book.image.attached? %>
         </div>
         <div class='book-info'>
           <h3 class='book-title'>
             <%= book.title %>
             </h3>
           <div class='book-publisher'>
-            <span><%= book.publisher %></span>
+            <span><%="出版社："%><%= book.publisher %></span>
           </div>
           <div class='book-genre'>
-            <span><%= book.genre.name %></span>
+            <span><%="ジャンル："%> <%= book.genre.name %></span>
         </div>
         </div>
         <% end %>
