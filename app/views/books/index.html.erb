@@ -54,7 +54,7 @@
           <% @books.each do |book| %>
       <li class='books-list'>
         <%= link_to books_path(book.id),class:"book-link" do %>
-        <div class='item-img-content'>
+        <div class='book-img-content'>
         <%= image_tag book.image.variant(resize_to_fill: [200,200]), class: 'book-image' if book.image.attached? %>
         </div>
         <div class='book-info'>
