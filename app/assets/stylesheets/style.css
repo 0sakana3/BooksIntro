@@ -257,13 +257,33 @@ h2{
 
 .user_greeting{
   color: #423B35;
-  margin-top: 20px;
+  margin: 20px 0;
   font-weight: bold;
 }
 
 .user_link{
   color: #423B35;
   border: none;
+}
+
+.content{
+  display: flex;
+}
+
+.book_button{
+  background-color: #73705F;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 12px 10px;
+}
+
+.book_introduction{
+  color: #FFFFFF;
 }
 
 /* 紹介ページフォーム */

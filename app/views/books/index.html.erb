@@ -35,8 +35,13 @@
           <%= link_to current_user.nickname, "#", class: "user_link" %> 
           <%= "さん" %>
         </div>
+        <div class="content">
+          <div class="greeting">
+               <%= "ここはあなたの読んだ本を紹介できるサイトです。" %>
+          </div>
         <div class="book_button">
           <%= link_to '紹介する', new_book_path, class: "book_introduction" %>
+        </div>
         </div>
       </div>
       <% end %>
