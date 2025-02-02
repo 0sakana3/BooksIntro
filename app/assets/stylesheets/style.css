@@ -296,6 +296,7 @@ h2{
   font-size: 14px;
   color: #423B35;
   margin-bottom: 10px;
+    width: 100%;
 }
 
 .img-upload{
@@ -305,6 +306,10 @@ h2{
 .click-upload{
   font-size: 14px;
   color: #73705F;
+}
+
+.books_text{
+  width: 100%;
 }
 
 /* トップ下部 */
