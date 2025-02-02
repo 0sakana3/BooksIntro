@@ -22,7 +22,7 @@
 | genre_id           | integer | null:false |
 | detail             | text    | null:false |
 | recommended        | text    | null:false |
-| url                | text    | null:false |
+| reference          | text    | null:false |
 | user               | references | null:false, foreign_key: true |
 
 ### Association

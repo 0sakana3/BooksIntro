@@ -6,7 +6,7 @@ class CreateBooks < ActiveRecord::Migration[7.0]
       t.integer  :genre_id,       null:false
       t.text :detail,             null:false 
       t.text :recommended,        null:false 
-      t.text :url,                null:false 
+      t.text :reference,          null:false 
       t.references :user,         null:false, foreign_key: true   
       t.timestamps
     end

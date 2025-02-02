@@ -45,7 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_01_24_013408) do
     t.integer "genre_id", null: false
     t.text "detail", null: false
     t.text "recommended", null: false
-    t.text "url", null: false
+    t.text "reference", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

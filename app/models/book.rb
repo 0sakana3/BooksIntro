@@ -10,6 +10,6 @@ class Book < ApplicationRecord
   validates :genre_id, numericality: { other_than: 1, message: "can't be blank"} 
   validates :detail , presence: true
   validates :recommended, presence: true
-  validates :url, presence: true
+  validates :reference, presence: true
 
 end
