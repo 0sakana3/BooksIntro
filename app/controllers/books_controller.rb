@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
   before_action :move_to_index, except: [:index, :show]
-  before_action :authenticate_user!, only: [:create]
   def index
     @books = Book.all.order(created_at: :desc)
   end
