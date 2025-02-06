@@ -6,6 +6,11 @@ FactoryBot.define do
     detail             { Faker::Lorem.sentence }
     recommended        { Faker::Lorem.sentence }
     reference          { Faker::Internet.url }
-    user 
+    
+    association :user
+
+    after(:build) do |book|
+      book.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
+    end
   end
 end
