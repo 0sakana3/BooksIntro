@@ -50,13 +50,13 @@
   </div>
   </div>
 
-    <%# 投稿機能実装後、部分テンプレートで投稿一覧を表示する %>
+    <%# 投稿一覧 %>
     <div class="under_page">
     <div class="introduction">
-      <P>紹介された図書</P>
+      <P>紹介図書</P>
     </div>
       <div class="books-lists">
-         <% if @books.present? %>
+        <% if @books.present? %>
           <% @books.each do |book| %>
       <li class='books-list'>
         <%= link_to books_path(book.id),class:"book-link" do %>
@@ -77,8 +77,31 @@
         <% end %>
       </li>
       <% end %>
+
       <% else %>
       <!-- 投稿がない場合の表示内容 -->
+      <div class="books-lists">
+        <%= link_to new_book_path, class: "book-link" do %>
+      <li class='books-list'>
+        <%=  "本を紹介しよう！" %>
+        <%= image_tag "default_image.png", size: "200x200" %>
+        <div class='book-img-content'>
+        <%=  "画像や" %>
+        </div>
+        <div class='book-info'>
+          <h3 class='book-title'>
+            <%= "タイトル" %>
+          </h3>
+          <div class='book-publisher'>
+            <span><%= "出版社" %></span>
+          </div>
+          <div class='book-genre'>
+            <span><%= "ジャンルをはじめ、<br>おすすめポイントなどを投稿できます。".html_safe  %></span>
+          </div>
+        </div>
+      </li>
+      <% end %>
+      </div>
       <% end %>
       </div>
     </div>
