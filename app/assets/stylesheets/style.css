@@ -73,6 +73,7 @@ body {
   min-width: 800px;
   width: 100%;
   height: auto;
+  max-width: 100%; 
 }
 
 .top_page{
@@ -93,7 +94,7 @@ body {
   height: 350px;
   width: 80%;
   border-radius: 0px 0px 0px 100px ;
-  box-shadow: 2px 2px 4px gray;
+  box-shadow: 2px 2px 4px #73705F;
 }
 
 .inner_content{
@@ -158,7 +159,7 @@ ul li{
   padding: 10px 50px ;
   width: 80%;
   border-radius: 0px 0px 0px 100px ;
-  box-shadow: 2px 2px 4px gray;
+  box-shadow: 2px 2px 4px #73705F;
 }
 
 h2{
@@ -252,7 +253,7 @@ h2{
   width: 80%;
   height: 500px;
   border-radius: 0px 0px 0px 100px ;  
-  box-shadow: 2px 2px 4px gray;
+  box-shadow: 2px 2px 4px #73705F;
 }
 
 .user_greeting{
@@ -276,13 +277,9 @@ h2{
   width: 100px;
   height: 40px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 0 12px 10px;
-}
-
-.book_introduction{
+  justify-content:space-around;
+  align-items:center;
+  margin: 0 50px 10px;
   color: #FFFFFF;
 }
 
@@ -313,17 +310,25 @@ h2{
 }
 
 /* トップ下部 */
+
+.under{
+  display: flex;
+  justify-content: center;
+}
+
 .under_page{
   background-color: #FFFFFF;
   padding: 10px 50px ;
-  width: 100%;
+  width: 90%;
+  max-width: 100%; 
   height: auto;
 }
 
 .books-lists{
 display: flex;
+flex-wrap: wrap;
 list-style: none;
-align-items: flex-end;
+justify-content: center;
 }
 
 .book-link{
@@ -333,11 +338,13 @@ align-items: flex-end;
   display: block;
   margin: 16px;
   padding: 20px;
-  width: 350px;
-  height: auto;
+  width: 360px;
+  height: 400px;
   background-color:#FFFFFF;
   border-radius: 10px ;
-  box-shadow: 1px 1px 6px gray;
+  box-shadow: 1px 1px 6px #73705F;
+  box-sizing: border-box; 
+  word-wrap: break-word; 
 }
 
 .book-title{
@@ -345,7 +352,7 @@ align-items: flex-end;
   font-size: 20px;
 }
 
-.book-publisher, book-genre{
+.book-publisher, .book-genre{
   padding-bottom: 10px;
 }
 
@@ -355,4 +362,167 @@ align-items: flex-end;
   font-size: 18px;
   font-weight: bold;
   margin: 20px 0 10px 50px;
+}
+
+/* 詳細ページ用 */
+
+.detail_page{
+  display: flex;
+  justify-content: center;
+}
+
+.detail_page_inner{
+  background-color: #FFFFFF;
+  margin-top:  40px ;
+  padding: 10px 50px ;
+  height: auto;
+  width: 80%;
+  border-radius: 0px 0px 0px 100px ;
+  box-shadow: 2px 2px 4px gray;
+}
+
+.detail_page_inner{
+  display: flex;
+  justify-content: center;
+}
+
+.show_content{
+  text-align: center;
+  width: 80%;
+  padding: 30px;
+  margin: 40px 0;
+}
+
+.detail_book-title{
+  font-size: 24px;
+  font-weight: bold;
+  color: #423B35;
+  display: inline-block;
+  padding: 10px;
+}
+.topic{
+  font-size: 16px;
+  color: gray;
+  margin-top: 30px;
+}
+
+.hr1 {
+	height: 1px;
+	border-width: 0;
+	background-image: -webkit-linear-gradient(left,
+	transparent 0%,#73705F 50%,transparent 100%);
+	background-image:         linear-gradient(90deg,
+	transparent 0%,#73705F 50%,transparent 100%);
+  width: 50%;
+  margin-bottom: 80px;
+}
+
+.hr2 {
+	height: 1px;
+	border-width: 0;
+	background-image: -webkit-linear-gradient(left,
+	transparent 0%,#73705F 50%,transparent 100%);
+	background-image:         linear-gradient(90deg,
+	transparent 0%,#73705F 50%,transparent 100%);
+  width: 40%;
+}
+
+.book-info{
+  color: #423B35;
+}
+
+.sentence{
+  padding-bottom: 16px;
+}
+
+.sentence-text{
+  padding-bottom: 40px;
+}
+.image-content-img{
+  padding-bottom: 40px;
+}
+
+.book-detail,.book-recommended{
+  text-align: left;
+  word-wrap: break-word;
+  margin: 20px 10px 0 10px;
+  color: #423B35;
+  font-size: 16px;
+}
+
+.book-reference{
+  word-wrap: break-word;
+  margin: 20px 10px 0 10px;
+  color: #423B35;
+  font-size: 16px;
+}
+
+.book-publisher,.book-genre{
+  word-wrap: break-word;
+  color: #73705F;
+  font-size: 16px;
+}
+
+.detail_button{
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.book_button_delete{
+  background-color: #E6E5E3;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content:space-around;
+  align-items:center;
+  margin: 0 50px 10px;
+  color: #423B35;
+}
+
+/* ドロップダウンボタン */
+.drop-btn {
+  color: #73705F;
+  background-color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* ドロップダウンのコンテナ */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* ドロップダウンの中身（非表示） */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 120px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 16px;
+}
+
+/* ドロップダウンの中のリンク */
+.dropdown-content a {
+  padding: 10px 12px;
+  margin: 20px;
+  text-decoration: none;
+  display: block;
+}
+
+/* ホバーで表示 */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ボタンにホバーした時のスタイル */
+.drop-btn:hover {
+  color: #423B35;
 }

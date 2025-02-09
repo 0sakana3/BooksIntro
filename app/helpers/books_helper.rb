@@ -6,4 +6,8 @@ module BooksHelper
       image_tag 'default_image.png', class: 'book-image', width: 200, height: 200
     end
   end
+
+  def format_text_for_display(text)
+    text.gsub("\n", "<br>").html_safe
+  end
 end
