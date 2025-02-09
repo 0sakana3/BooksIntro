@@ -51,6 +51,7 @@
   </div>
 
     <%# 投稿一覧 %>
+    <div class="under">
     <div class="under_page">
     <div class="introduction">
       <P>紹介図書</P>
@@ -59,7 +60,7 @@
         <% if @books.present? %>
           <% @books.each do |book| %>
       <li class='books-list'>
-        <%= link_to books_path(book.id),class:"book-link" do %>
+        <%= link_to book_path(book.id),class:"book-link" do %>
         <div class='book-img-content'>
         <%= book_image_tag(book) %>
         </div>
@@ -67,6 +68,7 @@
           <h3 class='book-title'>
             <%= book.title %>
             </h3>
+
           <div class='book-publisher'>
             <span><%="出版社："%><%= book.publisher %></span>
           </div>
@@ -104,5 +106,6 @@
       </div>
       <% end %>
       </div>
+    </div>
     </div>
 </main>

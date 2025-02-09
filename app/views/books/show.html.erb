@@ -1,0 +1,62 @@
+<main class="main">
+  <div class="page">
+      <div class="detail_page">
+        <div class="detail_page_inner">
+          <div class="show_content">
+            <div class='detail_book-title'>
+              <%= @book.title %>
+            </div>
+            <hr class="hr1">
+            <div class="sentence-image">
+              <div class='book-img-content'>
+                <% if @book.image.attached? %>
+                  <%= image_tag @book.image.variant(resize_to_fill: [400,400]),class:"image-content-img" %>
+                <% end %>
+              </div>
+            </div>
+                <div class='book-info'>
+                  <div class="sentence">
+                  <span class="topic"><%="出版社:"%></span>
+                  <span class='book-publisher'>
+                   <%= @book.publisher %>
+                  </span>
+                  </div>
+
+                  <div class="sentence">
+                      <span class="topic"><%="ジャンル:"%></span>
+                      <span class='book-genre'>
+                        <%= @book.genre.name %>
+                      </span>
+                  </div>
+                    
+                    <div class="sentence-text">
+                      <div class="topic"> <%="詳細"%></div>
+                       <hr class="hr2">
+                      <div class="book-detail">
+                        <%= format_text_for_display(@book.detail) %>
+                      </div>
+                    </div>
+                     
+                     <div class="sentence-text">
+                      <div class="topic"> <%="おすすめポイント"%></div>
+                       <hr class="hr2">
+                      <div class="book-recommended">
+                        <%= format_text_for_display(@book.recommended) %>
+                      </div>
+                     </div>
+                      
+                      <div class="sentence-text">
+                      <div class="topic">
+                        <%="参考"%>
+                      </div>
+                       <hr class="hr2">
+                      <div class="book-reference" >
+                          <%= format_text_for_display(@book.reference) %>
+                        </div>
+                      </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</main>
