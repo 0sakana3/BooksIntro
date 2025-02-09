@@ -54,6 +54,7 @@
                           <%= format_text_for_display(@book.reference) %>
                         </div>
                       </div>
+                      <% if user_signed_in? && current_user.id == @book.user_id %>
                 <div class="detail_button">
                   <div class="dropdown">
                     <button class="drop-btn">▼</button>
@@ -63,6 +64,7 @@
                       </div>
                   </div>
                 </div>
+                <% end %>
             </div>
           </div>
         </div>
