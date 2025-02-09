@@ -1,0 +1,85 @@
+<main class="main">
+    <div class="page_form">
+<div class="inner_content">
+<div class="inner_login">
+<%= form_with model: @book, url: book_path, local: true do |f| %>
+
+<h2>本の情報を編集する</h2>
+     
+  <div class="form-group">
+    <%= render "devise/shared/error_messages", resource: f.object %>
+
+    <%# 本の画像 %>
+    <div class="img-upload">
+      <div class="form-text">
+        画像
+        <span class="indispensable">任意</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id: "item-image" %>
+      </div>
+    </div>
+
+    <%# 本の名前と情報 %>
+    <div class='form-text-wrap'>
+      <label class="form-text">タイトル</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :title, class:"books_text", id:"title", placeholder:"本のタイトル(必須 30文字まで)", maxlength:"40" %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">出版社</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :publisher, class:"books_text", id:"publisher", placeholder:"出版社(必須 30文字まで)", maxlength:"30" %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">ジャンル</label>
+      <span class="indispensable">必須</span>
+    </div>
+        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"genre-category"}) %>
+  </div>
+
+    <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">詳細</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :detail, class:"books_text", id:"detail", placeholder:"本の説明（必須 1,000文字まで）", rows:"7", maxlength:"10000" %>
+  </div>
+
+      <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">おすすめポイント</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :recommended, class:"books_text", id:"recommended", placeholder:"本のおすすめポイントなど（必須 1,000文字まで）", rows:"7", maxlength:"10000" %>
+  </div>
+
+   <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">参考</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :reference , class:"books_text", id:"reference", placeholder:"購入できるサイトなど", maxlength:"8000" %>
+  </div>
+
+
+  <div class="inner_content">
+  <div class='login-btn'>
+    <%= f.submit "投稿する" ,class:"login_brown_btn" %>
+  </div>
+<% end %>
+  </div>
+</div>
+</div>
+    </div>
+</main>
+
