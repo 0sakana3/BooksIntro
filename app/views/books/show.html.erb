@@ -10,7 +10,7 @@
             <div class="sentence-image">
               <div class='book-img-content'>
                 <% if @book.image.attached? %>
-                  <%= image_tag @book.image.variant(resize_to_fill: [400,400]),class:"image-content-img" %>
+                  <%= image_tag @book.image.variant(resize_to_limit: [400,400]),class:"image-content-img" %>
                 <% end %>
               </div>
             </div>

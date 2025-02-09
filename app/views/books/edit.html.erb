@@ -20,7 +20,12 @@
           クリックしてファイルをアップロード
         </p>
         <%= f.file_field :image, id: "item-image" %>
-      </div>
+    </div>
+    <div class="check-delete">
+      <label>
+        <%= check_box_tag "book[remove_image]", "1" %>画像を削除する
+      </label>
+    </div>
     </div>
 
     <%# 本の名前と情報 %>

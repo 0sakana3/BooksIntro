@@ -481,7 +481,7 @@ justify-content: center;
   color: #423B35;
 }
 
-/* ドロップダウンボタン */
+
 .drop-btn {
   color: #73705F;
   background-color: white;
@@ -492,13 +492,11 @@ justify-content: center;
   border-radius: 5px;
 }
 
-/* ドロップダウンのコンテナ */
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
-/* ドロップダウンの中身（非表示） */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -509,7 +507,6 @@ justify-content: center;
   border-radius: 16px;
 }
 
-/* ドロップダウンの中のリンク */
 .dropdown-content a {
   padding: 10px 12px;
   margin: 20px;
@@ -517,12 +514,17 @@ justify-content: center;
   display: block;
 }
 
-/* ホバーで表示 */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* ボタンにホバーした時のスタイル */
 .drop-btn:hover {
   color: #423B35;
+}
+
+/* 編集フォーム */
+
+.check-delete {
+  margin-top: 10px;
+
 }
