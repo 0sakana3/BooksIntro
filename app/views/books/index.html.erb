@@ -1,47 +1,108 @@
 <main class="main">
+  <div class="page">
+  <div class="top_page">
      <% if !user_signed_in? %>
   <div class="inner">
       <h1 >Books Intro</h1>
     <div class="inner_content">
-    <div class="inner_right">
-      <div class="greeting"> 
-        <ul class="greeting">
-          <li class="greeting">
-        <%= "ここはあなたの読んだ本を紹介できるサイトです。" %>
-          </li>
-          <li class="greeting">
-        <%= "面白かった本、読んだ本を登録できます。"%>
-          </li>
-          <li class="greeting">
-        <%= "紹介された本を読んで感想を投稿する事ができます。"%>
-          </li>
-        </ul>
+      <div class="inner_right">
+        <div class="greeting"> 
+          <ul class="greeting">
+            <li class="greeting">
+          <%= "ここはあなたの読んだ本を紹介できるサイトです。" %>
+            </li>
+            <li class="greeting">
+          <%= "面白かった本、読んだ本を登録できます。"%>
+            </li>
+            <li class="greeting">
+          <%= "紹介された本を読んで感想を投稿する事ができます。"%>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-     <div class="inner_left">
+      <div class="inner_left">
+          <div class="login_button">
+        <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+        </div>
         <div class="login_button">
-      <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-       </div>
-       <div class="login_button">
-      <%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-       </div>
+        <%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+        </div>
       </div>
-    </div>
-    <% else %>
-  <div class="inner_page">
-    <div class="user_greeting">
-      <%= "こんにちは、" %>
-      <%= link_to current_user.nickname, "#", class: "user_link" %> 
-      <%= "さん" %>
-    </div>
-  </div>
-ç
+      <% else %>
+      <div class="inner_page">
+        <div class="user_greeting">
+          <%= "こんにちは、" %>
+          <%= link_to current_user.nickname, "#", class: "user_link" %> 
+          <%= "さん" %>
+        </div>
+        <div class="content">
+          <div class="greeting">
+            <%= "ここはあなたの読んだ本を紹介できるサイトです。" %>
+          </div>
+        <div class="book_button">
+          <%= link_to '紹介する', new_book_path, class: "book_introduction" %>
+        </div>
+        </div>
+      </div>
       <% end %>
-  </div>
-  </div>
     </div>
   </div>
-    <div class="card__wrapper">
-      <%# 投稿機能実装後、部分テンプレートで投稿一覧を表示する %>
+  </div>
+  </div>
+
+    <%# 投稿一覧 %>
+    <div class="under_page">
+    <div class="introduction">
+      <P>紹介図書</P>
+    </div>
+      <div class="books-lists">
+        <% if @books.present? %>
+          <% @books.each do |book| %>
+      <li class='books-list'>
+        <%= link_to books_path(book.id),class:"book-link" do %>
+        <div class='book-img-content'>
+        <%= book_image_tag(book) %>
+        </div>
+        <div class='book-info'>
+          <h3 class='book-title'>
+            <%= book.title %>
+            </h3>
+          <div class='book-publisher'>
+            <span><%="出版社："%><%= book.publisher %></span>
+          </div>
+          <div class='book-genre'>
+            <span><%="ジャンル："%> <%= book.genre.name %></span>
+        </div>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
+
+      <% else %>
+      <!-- 投稿がない場合の表示内容 -->
+      <div class="books-lists">
+        <%= link_to new_book_path, class: "book-link" do %>
+      <li class='books-list'>
+        <%=  "本を紹介しよう！" %>
+        <%= image_tag "default_image.png", size: "200x200" %>
+        <div class='book-img-content'>
+        <%=  "画像や" %>
+        </div>
+        <div class='book-info'>
+          <h3 class='book-title'>
+            <%= "タイトル" %>
+          </h3>
+          <div class='book-publisher'>
+            <span><%= "出版社" %></span>
+          </div>
+          <div class='book-genre'>
+            <span><%= "ジャンルをはじめ、<br>おすすめポイントなどを投稿できます。".html_safe  %></span>
+          </div>
+        </div>
+      </li>
+      <% end %>
+      </div>
+      <% end %>
+      </div>
     </div>
 </main>
