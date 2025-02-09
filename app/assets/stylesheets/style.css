@@ -277,13 +277,9 @@ h2{
   width: 100px;
   height: 40px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 0 12px 10px;
-}
-
-.book_introduction{
+  justify-content:space-around;
+  align-items:center;
+  margin: 0 50px 10px;
   color: #FFFFFF;
 }
 
@@ -465,4 +461,68 @@ justify-content: center;
   word-wrap: break-word;
   color: #73705F;
   font-size: 16px;
+}
+
+.detail_button{
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.book_button_delete{
+  background-color: #E6E5E3;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content:space-around;
+  align-items:center;
+  margin: 0 50px 10px;
+  color: #423B35;
+}
+
+/* ドロップダウンボタン */
+.drop-btn {
+  color: #73705F;
+  background-color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* ドロップダウンのコンテナ */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* ドロップダウンの中身（非表示） */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 120px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 16px;
+}
+
+/* ドロップダウンの中のリンク */
+.dropdown-content a {
+  padding: 10px 12px;
+  margin: 20px;
+  text-decoration: none;
+  display: block;
+}
+
+/* ホバーで表示 */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ボタンにホバーした時のスタイル */
+.drop-btn:hover {
+  color: #423B35;
 }
