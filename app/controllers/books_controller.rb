@@ -26,6 +26,16 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
+  def update
+    @book = Book.find(params[:id])
+    @book.image.purge if params[:book][:remove_image] == "1"
+    if @book.update(book_params)
+      redirect_to book_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def move_to_index
