@@ -91,7 +91,7 @@
             </div>
             <% end %>
           <%= form_with(model: [@book, @comment || Comment.new], local: true) do |form| %>
-          <%= form.text_area :text, maxlength: 140, class:"comment_text", placeholder: "紹介された本の内容について話す事ができます。コメントする（最大140文字まで）", rows: "4" %>
+          <%= form.text_area :text, maxlength: 140, class:"comment_text", placeholder: "紹介された本の内容について話す事ができます（最大140文字まで）", rows: "4" %>
           <%= form.submit '送信', class: 'form-submit' %>
           <% end %>
         <% else %>
@@ -107,7 +107,7 @@
       <div class="comment_list">
       <div class="comments">
         <% if @comments.empty? %>
-    <p>※まだコメントはありません。紹介されている本を読んだら、最初のコメントを投稿しましょう！※</p>
+    <p>まだコメントはありません。紹介されている本の内容についての感想コメントを投稿しましょう！</p>
   <% else %>
       <% @comments.each do |comment| %>
         <p class="comment">
