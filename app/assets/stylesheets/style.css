@@ -398,8 +398,9 @@ justify-content: center;
   font-weight: bold;
   color: #423B35;
   display: inline-block;
-  padding: 10px;
+  padding: 10px 0 0 0;
 }
+
 .topic{
   font-size: 16px;
   color: gray;
@@ -414,7 +415,7 @@ justify-content: center;
 	background-image:         linear-gradient(90deg,
 	transparent 0%,#73705F 50%,transparent 100%);
   width: 50%;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
 }
 
 .hr2 {
@@ -439,7 +440,7 @@ justify-content: center;
   padding-bottom: 40px;
 }
 .image-content-img{
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 
 .book-detail,.book-recommended{
@@ -481,7 +482,7 @@ justify-content: center;
   color: #423B35;
 }
 
-/* ドロップダウンボタン */
+
 .drop-btn {
   color: #73705F;
   background-color: white;
@@ -492,13 +493,11 @@ justify-content: center;
   border-radius: 5px;
 }
 
-/* ドロップダウンのコンテナ */
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
-/* ドロップダウンの中身（非表示） */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -509,7 +508,6 @@ justify-content: center;
   border-radius: 16px;
 }
 
-/* ドロップダウンの中のリンク */
 .dropdown-content a {
   padding: 10px 12px;
   margin: 20px;
@@ -517,12 +515,17 @@ justify-content: center;
   display: block;
 }
 
-/* ホバーで表示 */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* ボタンにホバーした時のスタイル */
 .drop-btn:hover {
   color: #423B35;
+}
+
+/* 編集フォーム */
+
+.check-delete {
+  margin-top: 10px;
+
 }
