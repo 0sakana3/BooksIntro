@@ -155,7 +155,7 @@ ul li{
 .inner_registration,.inner_login{
   background-color: #FFFFFF;
   margin-top:  40px ;
-  padding: 10px 50px ;
+  padding: 60px 50px ;
   width: 80%;
   border-radius: 0px 0px 0px 100px ;
   box-shadow: 2px 2px 4px #73705F;
@@ -165,7 +165,7 @@ h2{
   font-family: 'Roboto', sans-serif;
   color: #73705F;
   font-size: 24px;
-  margin: 50px 0 10px 50px;
+  margin:  0 10px 50px;
 }
 
 .field{
