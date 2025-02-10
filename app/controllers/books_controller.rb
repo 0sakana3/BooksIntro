@@ -1,6 +1,8 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit]
   before_action :move_to_index, except: [:index, :show]
+  before_action :set_book, only: [:edit, :update]
+  before_action :contributor_confirmation, only: [:edit, :update]
   def index
     @books = Book.all.order(created_at: :desc)
   end
@@ -42,9 +44,18 @@ class BooksController < ApplicationController
     unless user_signed_in?
       redirect_to action: :index
     end
-
-    def book_params
-      params.require(:book).permit(:image, :title, :publisher, :genre_id, :detail, :recommended, :reference)
-    end
   end
+
+  def book_params
+      params.require(:book).permit(:image, :title, :publisher, :genre_id, :detail, :recommended, :reference)
+  end
+
+  def set_book
+    @book = Book.find(params[:id])
+  end
+
+  def contributor_confirmation
+    redirect_to root_path unless current_user == @book.user
+  end
+  
 end
