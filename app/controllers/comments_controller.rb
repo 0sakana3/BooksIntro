@@ -5,6 +5,8 @@ class CommentsController < ApplicationController
     if @comment.save
     redirect_to book_path(@book)
     else
+      @comments = @book.comments.includes(:user)  
+      flash.now[:alert] = "コメントの投稿に失敗しました。入力内容を確認してください。"
       render 'books/show', status: :unprocessable_entity
     end
   end
