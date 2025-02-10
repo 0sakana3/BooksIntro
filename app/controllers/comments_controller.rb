@@ -1,7 +1,12 @@
 class CommentsController < ApplicationController
   def create
-    @comment =Comment.create(comment_params)
-    redirect_to  "/books/#{@comment.book.id}"
+    @book = Book.find(params[:book_id])
+    @comment = @book.comments.new(comment_params) 
+    if @comment.save
+    redirect_to book_path(@book)
+    else
+      render 'books/show', status: :unprocessable_entity
+    end
   end
 
   private

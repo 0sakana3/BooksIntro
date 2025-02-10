@@ -78,5 +78,21 @@
           </div>
         </div>
       </div>
+            <div class="content_comment_form">
+        <% if user_signed_in? %>
+        <div class="form_show_content">
+          <div class="comment_form">
+            <div class="comment_form-text">
+          <%= "感想コメントフォーム"%>
+            </div>
+          <%= form_with(model: [@book, @comment || Comment.new], local: true) do |form| %>
+          <%= form.text_area :text, class:"comment_text", placeholder: "コメントする（紹介された本の内容について話す事ができます）", rows: "4" %>
+          <%= form.submit '送信', class: 'form-submit' %>
+          <% end %>
+        <% else %>
+        <% end %>
+      </div>
+        </div>
+      </div>
   </div>
 </main>
