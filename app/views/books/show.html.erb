@@ -63,7 +63,7 @@
                     <button class="drop-btn">▼</button>
                       <div class="dropdown-content">
                         <%= link_to "編集",  edit_book_path(@book.id), method: :get, class: "book_button" %>
-                        <%= link_to "削除", "#", data: { turbo_method: :delete }, class: "book_button_delete" %>
+                        <%= link_to "削除", book_path(@book.id), data: { turbo_method: :delete }, class: "book_button_delete" %>
                       </div>
                   </div>
                 </div>
