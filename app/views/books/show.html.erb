@@ -82,7 +82,7 @@
         <% if user_signed_in? %>
         <div class="form_show_content">
           <div class="comment_form">
-            <div class="comment_form-text">
+            <div class="topic_comment">
           <%= "感想コメントフォーム"%>
             </div>
             <% if flash[:alert] %>
@@ -99,5 +99,30 @@
       </div>
         </div>
       </div>
+                <div class="content_comment">
+            <div class="comment_form-text">
+      <div class="comment-title">
+        <%= "コメント一覧" %>
+      </div>
+      <div class="comment_list">
+      <div class="comments">
+        <% if @comments.empty? %>
+    <p>※まだコメントはありません。紹介されている本を読んだら、最初のコメントを投稿しましょう！※</p>
+  <% else %>
+      <% @comments.each do |comment| %>
+        <p class="comment">
+          <div class="comment-user">
+            <strong><%= comment.user.nickname %>：</strong>
+          </div>
+          <div class="comment-text">
+          <%= simple_format(comment.text) %>
+          </div>
+        </p>
+        <% end %>
+      <% end %>
+    </div>
+              </div>
+            </div>
+                </div>
   </div>
 </main>
