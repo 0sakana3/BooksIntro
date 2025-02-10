@@ -541,7 +541,7 @@ justify-content: center;
 
 /* コメントフォーム */
 
-.content_comment_form{
+.content_comment{
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -551,7 +551,7 @@ justify-content: center;
   text-align: center;
   width: 80%;
   height: auto;
-  padding: 10px;
+  margin: 10px;
 }
 
 .comment_form{
@@ -581,16 +581,6 @@ justify-content: center;
   border: none;
 }
 
-.content_comment{
-display: flex;
-justify-content: center;
-width: 100%;
-height: auto;
-padding: 0 10px;
-display: flex;
-justify-content: center;
-}
-
 .comment_form-text{
   background-color: #FFFFFF;
   min-height: 100px;
@@ -598,6 +588,7 @@ justify-content: center;
   padding-bottom: 10px;
   border-radius: 0 0 10px 10px;
   box-shadow: 2px 2px 4px gray;
+  
 }
 
 .comment_list{
@@ -609,7 +600,7 @@ justify-content: center;
 .comments{
   width: 80%;
   height: auto;
-  padding: 10px;
+  margin: 10px;
   }
 
 .topic_comment{
