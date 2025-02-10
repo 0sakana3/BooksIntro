@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit]
   before_action :move_to_index, except: [:index, :show]
-  before_action :set_book, only: [:edit, :update]
+  before_action :set_book, only: [:show, :edit, :update]
   before_action :contributor_confirmation, only: [:edit, :update]
   def index
     @books = Book.all.order(created_at: :desc)
@@ -21,15 +21,12 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.find(params[:id])
   end
 
   def edit
-    @book = Book.find(params[:id])
   end
 
   def update
-    @book = Book.find(params[:id])
     @book.image.purge if params[:book][:remove_image] == "1"
     if @book.update(book_params)
       redirect_to book_path
