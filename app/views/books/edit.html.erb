@@ -81,8 +81,12 @@
   <div class='login-btn'>
     <%= f.submit "投稿する" ,class:"login_brown_btn" %>
   </div>
-<% end %>
+    <% end %>
   </div>
+
+                <div class="index-btn">
+                  <%= link_to '編集せずにもどる', book_path(@book.id), class: "index_link" %>
+                </div>
 </div>
 </div>
     </div>

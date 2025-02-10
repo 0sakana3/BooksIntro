@@ -57,6 +57,8 @@
                           <%= format_text_for_display(@book.reference) %>
                         </div>
                       </div>
+
+
                       <% if user_signed_in? && current_user.id == @book.user_id %>
                 <div class="detail_button">
                   <div class="dropdown">
@@ -68,6 +70,10 @@
                   </div>
                 </div>
                 <% end %>
+
+                <div class="index-btn">
+                  <%= link_to 'もどる', root_path, class: "index_link" %>
+                </div>
             </div>
           </div>
         </div>
