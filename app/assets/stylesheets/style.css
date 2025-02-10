@@ -46,8 +46,7 @@ header{
     border:#FFFFFF 2px solid;
       border-radius: 5px;
       width: 100px;
-      height: 30px;
-      align-items: center;
+      height: 35px;
       text-align: center;
       margin: 25px 10px;
       }
@@ -55,7 +54,7 @@ header{
       .logout {
         text-decoration: none;
         color: #73705F;
-        text-align: center 
+        align-items: center;
       }
       
 
