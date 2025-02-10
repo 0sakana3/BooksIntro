@@ -57,17 +57,23 @@
                           <%= format_text_for_display(@book.reference) %>
                         </div>
                       </div>
+
+
                       <% if user_signed_in? && current_user.id == @book.user_id %>
                 <div class="detail_button">
                   <div class="dropdown">
                     <button class="drop-btn">▼</button>
                       <div class="dropdown-content">
                         <%= link_to "編集",  edit_book_path(@book.id), method: :get, class: "book_button" %>
-                        <%= link_to "削除", "#", data: { turbo_method: :delete }, class: "book_button_delete" %>
+                        <%= link_to "削除", book_path(@book.id), data: { turbo_method: :delete }, class: "book_button_delete" %>
                       </div>
                   </div>
                 </div>
                 <% end %>
+
+                <div class="index-btn">
+                  <%= link_to 'もどる', root_path, class: "index_link" %>
+                </div>
             </div>
           </div>
         </div>

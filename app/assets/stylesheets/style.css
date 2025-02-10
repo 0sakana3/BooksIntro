@@ -101,7 +101,6 @@ body {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  padding-bottom: 60px;
 }
 
 h1{
@@ -223,7 +222,7 @@ h2{
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
-  margin: 20px 0 60px 0;
+  margin: 20px 0;
   display:flex;
   justify-content:center;
   text-align: center; 
@@ -527,5 +526,16 @@ justify-content: center;
 
 .check-delete {
   margin-top: 10px;
+}
 
+.index-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0 30px;
+}
+
+.index_link{
+  color: #73705F;
 }
