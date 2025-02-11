@@ -1,4 +1,4 @@
-function post (){
+function post() {
   const form = document.getElementById("form");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -11,7 +11,40 @@ function post (){
     XHR.open("POST", url, true);
     XHR.responseType = "json";
     XHR.send(formData);
-  });
- };
 
- window.addEventListener('turbo:load', post);
+    XHR.onload = function() {
+      if (XHR.status === 201) {
+        const newComment = XHR.response.post;
+        const userNickname = XHR.response.user;
+
+        if (newComment && userNickname) {
+          const commentsContainer = document.querySelector('.comments')
+
+
+          const commentElement = document.createElement('p');
+          commentElement.classList.add('comment');
+          commentElement.innerHTML = `
+            <div class="comment-user">
+            <strong>${userNickname}：</strong>
+            </div>
+            <div class="comment-text">
+            ${newComment.text}
+            </div>
+          `;
+          commentsContainer.appendChild(commentElement);
+
+          const explanationMessage = document.querySelector('.explanation');
+          if (explanationMessage) {
+            explanationMessage.remove();
+          }
+
+          form.reset();
+        }
+      } else {
+        alert("コメントの投稿に失敗しました: " + XHR.response.errors.join(", "));
+      }
+    };
+  });
+}
+
+window.addEventListener('turbo:load', post);

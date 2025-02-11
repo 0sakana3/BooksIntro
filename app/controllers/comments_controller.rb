@@ -3,11 +3,9 @@ class CommentsController < ApplicationController
     @book = Book.find(params[:book_id])
     @comment = @book.comments.new(comment_params) 
     if @comment.save
-    redirect_to book_path(@book)
+      render json: { post: @comment, user: @comment.user.nickname }, status: :created 
     else
-      @comments = @book.comments.includes(:user)  
-      flash.now[:alert] = "コメントの投稿に失敗しました。入力内容を確認してください。"
-      render 'books/show', status: :unprocessable_entity
+      render json: { errors: @comment.errors.full_messages }, status: :unprocessable_entity 
     end
   end
 
