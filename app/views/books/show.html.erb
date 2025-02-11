@@ -90,7 +90,7 @@
               <%= flash[:alert] %>
             </div>
             <% end %>
-          <%= form_with(model: [@book, @comment || Comment.new], local: true) do |form| %>
+          <%= form_with(model: [@book, Comment.new], local: false, id: "form", data: { book_id: @book.id }) do |form| %>
           <%= form.text_area :text, maxlength: 140, class:"comment_text", placeholder: "紹介された本の内容について話す事ができます。コメントする（最大140文字まで）", rows: "4" %>
           <%= form.submit '送信', class: 'form-submit' %>
           <% end %>
