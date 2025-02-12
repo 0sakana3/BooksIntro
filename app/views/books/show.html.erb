@@ -78,5 +78,54 @@
           </div>
         </div>
       </div>
+            <div class="content_comment">
+        <% if user_signed_in? %>
+        <div class="form_show_content">
+          <div class="comment_form">
+            <div class="topic_comment">
+          <%= "感想コメントフォーム"%>
+            </div>
+            <% if flash[:alert] %>
+            <div class="error-message">
+              <%= flash[:alert] %>
+            </div>
+            <% end %>
+<%= form_with(model: [@book, Comment.new], local: false, id: "form", data: { book_id: @book.id }) do |form| %>
+          <%= form.text_area :text, maxlength: 140, class:"comment_text", placeholder: "紹介された本の内容について話す事ができます。コメントする（最大140文字まで）", rows: "3" %>
+          <%= form.submit '送信', class: 'form-submit' %>
+          <% end %>
+      </div>
+        </div>
+      </div>
+                <div class="content_comment">
+                  
+            <div class="comment_form-text">
+              
+      <div class="comment-title">
+        <%= "コメント一覧" %>
+      </div>
+                                   <hr class="hr2">
+      <div class="comment_list">
+      <div class="comments">
+        <% if @comments.empty? %>
+    <p class="explanation">まだコメントはありません。紹介されている本の内容についての感想コメントを投稿しましょう！</p>
+  <% else %>
+      <% @comments.each do |comment| %>
+        <div class="comment">
+          <div class="comment-user">
+            <strong><%= comment.user.nickname %>：</strong>
+          </div>
+          <div class="comment-text">
+          <%= simple_format(comment.text) %>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+            <% else %>
+        <% end %>
+              </div>
+            </div>
+                </div>
   </div>
 </main>

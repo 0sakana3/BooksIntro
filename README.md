@@ -28,6 +28,7 @@
 ### Association
 - belongs_to  :user
 - belongs_to :read
+- has_many :comments
 
 ## reads テーブル
 
