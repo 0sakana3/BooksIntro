@@ -14,4 +14,7 @@ class Book < ApplicationRecord
   validates :recommended, presence: true, length: { in: 1..1000 }
   validates :reference, presence: true
 
+  def Read_by?(user)
+    reads.where(user_id: user.id).exists?
+  end
 end
