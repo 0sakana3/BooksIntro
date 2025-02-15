@@ -57,10 +57,17 @@
                           <%= format_text_for_display(@book.reference) %>
                         </div>
                       </div>
+                </div>
+
 
 <%# 詳細ページ下部,編集部分 %>
 
-                      <% if user_signed_in? && current_user.id == @book.user_id %>
+<div class="detail_page_under">
+  <div class="user_nickname">
+                      <%= "投稿者：" %><%= @book.user&.nickname || "不明なユーザー" %>
+                      </div>
+
+              <% if user_signed_in? && current_user.id == @book.user_id %>
                 <div class="detail_button">
                   <div class="dropdown">
                     <button class="drop-btn">▼</button>
@@ -70,22 +77,22 @@
                       </div>
                   </div>
                 </div>
+              <% end %>
+               </div> 
 
 <%# 編集部分終了 %>
 
-                <% end %>
+            
 
 <%# 読んだよボタン %>
 
+<div class="read-btn">
  <div id="read-btn<%= @book.id %>">
-  <% if user_signed_in? && @book.read_by?(current_user) %>
-    <%= link_to "読んだ！", book_reads_path(@book), data: { turbo_method: :delete }, class: "book_reads" %>
-  <% else %>
-    <%= link_to "読んだ？", book_reads_path(@book), data: { turbo_method: :post }, class: "book_reads" %>
-  <% end %>
+   <%= render partial: "reads/read", locals: { book: @book } %>
   <span><%= @book.reads.count %></span>
 </div>
- 
+</div>
+
 
 <%# 読んだよボタン終了 %>
 
@@ -95,7 +102,6 @@
             </div>
           </div>
         </div>
-      </div>
             <div class="content_comment">
         <% if user_signed_in? %>
         <div class="form_show_content">
