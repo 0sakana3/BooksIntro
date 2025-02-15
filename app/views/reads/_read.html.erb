@@ -1,5 +1,9 @@
-  <% if user_signed_in? && @book.read_by?(current_user) %>
+<% if user_signed_in? %>
+  <% if @book.user_id == current_user.id %>
+    <span class="own-book-label">あなたの紹介した本です</span>
+  <% elsif @book.read_by?(current_user) %>
     <%= link_to "読んだよ！", book_read_path(@book), data: { turbo_method: :delete }, class: "book_reads" %>
   <% else %>
     <%= link_to "読んだ？", book_reads_path(@book), data: { turbo_method: :post }, class: "book_reads" %>
   <% end %>
+<% end %>

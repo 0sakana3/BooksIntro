@@ -19,7 +19,7 @@ header{
 .title{
   font-size: 23px;
   color: #FFFFFF;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Arial', sans-serif;
   letter-spacing: 1.8px;
   font-weight: 100;
   text-decoration: none;
@@ -67,6 +67,7 @@ body {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont; 
 }
 
 .main{
@@ -105,7 +106,7 @@ body {
 }
 
 h1{
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Arial', sans-serif;
   color: #73705F;
   font-size: 24px;
   margin: 50px 0 10px 50px;
@@ -467,20 +468,22 @@ justify-content: center;
   display: flex;
   justify-content: center; 
   color: #73705F;
-  margin: 30px 0;
-  font-size: 14px;
+  margin: 36px 0;
+  font-size: 16px;
 }
 
 .detail_button{
   display: flex;
   justify-content: space-between;
+  font-size: 16px;
+  color: #73705F;
 }
 
 .book_button_delete{
   background-color: #E6E5E3;
   border-radius: 5px;
   width: 100px;
-  height: 40px;
+  height: 36px;
   display: flex;
   justify-content:space-around;
   align-items:center;
@@ -491,7 +494,7 @@ justify-content: center;
 .drop-btn {
   color: #73705F;
   background-color: white;
-  font-size: 14px;
+  font-size: 16px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
@@ -513,8 +516,8 @@ justify-content: center;
 }
 
 .dropdown-content a {
-  padding: 10px 12px;
-  margin: 20px;
+  padding: 8px 16px;
+  margin: 16px;
   text-decoration: none;
   display: block;
 }
@@ -527,12 +530,32 @@ justify-content: center;
   color: #423B35;
 }
 
-.user_nickname{
-  margin-right: 20px;
+.read-btn{
+  color: #73705F;
+  font-size: 14px;
 }
 
-.read-btn{
-  color: #B22222;
+.book_reads{
+font-size: 16px;
+    padding: 8px 16px;
+    margin: 0 10px;
+    color: #E6E5E3;
+    background: #73705F;
+    border-bottom: solid 2px #423B35; 
+    border-radius: 40px;
+}
+
+.read_count{
+  margin-top: 16px;
+}
+
+.own-book-label{
+  font-size: 16px;
+    padding: 8px 16px;
+    margin: 0 10px;
+    color: #73705F;
+    background: #E6E5E3;
+    border-radius: 40px;
 }
 /* 編集フォーム */
 
