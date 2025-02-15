@@ -85,9 +85,8 @@
 <%# 読んだよボタン %>
 
 <div class="read-btn">
- <div id="read-btn<%= @book.id %>">
+ <div id="read-btn-<%= @book.id %>">
    <%= render partial: "reads/read", locals: { book: @book } %>
-  <div class="read_count"><%="読んだ人数："%><%= @book.reads.count %></div>
 </div>
 </div>
 
