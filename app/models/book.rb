@@ -2,6 +2,7 @@ class Book < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to  :user
   has_many :comments 
+  has_many :reads
   has_one_attached  :image
 
   belongs_to :genre
@@ -13,4 +14,7 @@ class Book < ApplicationRecord
   validates :recommended, presence: true, length: { in: 1..1000 }
   validates :reference, presence: true
 
+  def read_by?(user)
+    reads.where(user_id: user.id).exists?
+  end
 end
