@@ -58,18 +58,36 @@
                         </div>
                       </div>
 
+<%# 詳細ページ下部,編集部分 %>
 
                       <% if user_signed_in? && current_user.id == @book.user_id %>
                 <div class="detail_button">
                   <div class="dropdown">
                     <button class="drop-btn">▼</button>
                       <div class="dropdown-content">
-                        <%= link_to "編集",  edit_book_path(@book.id), method: :get, class: "book_button" %>
-                        <%= link_to "削除", book_path(@book.id), data: { turbo_method: :delete }, class: "book_button_delete" %>
+                        <%= link_to "編集",  edit_book_path(@book), method: :get, class: "book_button" %>
+                        <%= link_to "削除", book_path(@book), data: { turbo_method: :delete }, class: "book_button_delete" %>
                       </div>
                   </div>
                 </div>
+
+<%# 編集部分終了 %>
+
                 <% end %>
+
+<%# 読んだよボタン %>
+
+ <div id="read-btn<%= @book.id %>">
+  <% if user_signed_in? && @book.read_by?(current_user) %>
+    <%= link_to "読んだ！", book_reads_path(@book), data: { turbo_method: :delete }, class: "book_reads" %>
+  <% else %>
+    <%= link_to "読んだ？", book_reads_path(@book), data: { turbo_method: :post }, class: "book_reads" %>
+  <% end %>
+  <span><%= @book.reads.count %></span>
+</div>
+ 
+
+<%# 読んだよボタン終了 %>
 
                 <div class="index-btn">
                   <%= link_to 'もどる', root_path, class: "index_link" %>
