@@ -38,8 +38,8 @@
 | book            | references | null:false, foreign_key: true |
 
 ### Association
-- has_one :book
-- has_one :user
+- belongs_to :book
+- belongs_to :user
 
 ## Comments テーブル
 

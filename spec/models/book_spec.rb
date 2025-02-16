@@ -22,10 +22,10 @@ RSpec.describe Book, type: :model do
       @book.valid?
       expect(@book.errors.full_messages).to include("Title can't be blank")
     end
-    it 'タイトルが40文字以上だと本紹介が投稿できない' do
+    it 'タイトルが30文字以上だと本紹介が投稿できない' do
       @book.title = '12345678901234567890123456789012345678901234567890'
       @book.valid?
-      expect(@book.errors.full_messages).to include("Title is too long (maximum is 40 characters)")
+      expect(@book.errors.full_messages).to include("Title is too long (maximum is 30 characters)")
     end
     it '出版社が空だと本紹介が投稿できない' do
       @book.publisher = ''

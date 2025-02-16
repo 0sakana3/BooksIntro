@@ -57,19 +57,40 @@
                           <%= format_text_for_display(@book.reference) %>
                         </div>
                       </div>
+                </div>
 
 
-                      <% if user_signed_in? && current_user.id == @book.user_id %>
+<%# 詳細ページ下部,編集部分 %>
+
+<div class="detail_page_under">
+  <div class="user_nickname">
+                      <%= "投稿者：" %><%= @book.user&.nickname || "不明なユーザー" %>
+                      </div>
+
+              <% if user_signed_in? && current_user.id == @book.user_id %>
                 <div class="detail_button">
                   <div class="dropdown">
                     <button class="drop-btn">▼</button>
                       <div class="dropdown-content">
-                        <%= link_to "編集",  edit_book_path(@book.id), method: :get, class: "book_button" %>
-                        <%= link_to "削除", book_path(@book.id), data: { turbo_method: :delete }, class: "book_button_delete" %>
+                        <%= link_to "編集",  edit_book_path(@book), method: :get, class: "book_button" %>
+                        <%= link_to "削除", book_path(@book), data: { turbo_method: :delete }, class: "book_button_delete" %>
                       </div>
                   </div>
                 </div>
-                <% end %>
+              <% end %>
+               </div> 
+
+<%# 編集部分終了 %>
+
+<%# 読んだよボタン %>
+
+<div class="read-btn">
+ <div id="read-btn-<%= @book.id %>">
+   <%= render partial: "reads/read", locals: { book: @book } %>
+</div>
+</div>
+
+<%# 読んだよボタン終了 %>
 
                 <div class="index-btn">
                   <%= link_to 'もどる', root_path, class: "index_link" %>
@@ -77,7 +98,6 @@
             </div>
           </div>
         </div>
-      </div>
             <div class="content_comment">
         <% if user_signed_in? %>
         <div class="form_show_content">
