@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :book do
-    title              { Faker::Commerce.name }
-    publisher          { Faker::Company.name }
+    title              { Faker::Book.title[0...30] }
+    publisher          { Faker::Company.name[0...30] }
     genre_id           { Faker::Number.between(from: 2, to: 10) }
     detail             { Faker::Lorem.sentence }
     recommended        { Faker::Lorem.sentence }

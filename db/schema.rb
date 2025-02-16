@@ -53,9 +53,9 @@ ActiveRecord::Schema[7.0].define(version: 2025_02_12_141002) do
   end
 
   create_table "comments", charset: "utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "book_id"
-    t.text "text"
+    t.integer "user_id", null: false
+    t.integer "book_id", null: false
+    t.text "text", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
