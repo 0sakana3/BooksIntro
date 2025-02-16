@@ -22,6 +22,7 @@ class BooksController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @book.comments.includes(:user)
+    @read_id = current_user.reads.find_by(book: @book)&.id
   end
 
   def edit
