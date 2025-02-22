@@ -228,6 +228,7 @@ h2{
   display:flex;
   justify-content:center;
   text-align: center; 
+  cursor: pointer;
 }
 
 .login_brown_btn, .register_brown_btn{
@@ -237,6 +238,7 @@ h2{
   border: 1px solid #73705F;
   color: #fff;
   line-height: 48px;
+  cursor: pointer;
 }
 
 .error-message{
@@ -498,6 +500,7 @@ justify-content: center;
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .dropdown {
@@ -569,6 +572,7 @@ font-size: 16px;
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .index_link{
@@ -615,6 +619,7 @@ font-size: 16px;
   margin: 10px 0 30px;
   color: #FFFFFF;
   border: none;
+  cursor: pointer;
 }
 
 .comment_form-text{
