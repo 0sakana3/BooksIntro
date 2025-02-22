@@ -11,12 +11,14 @@
       <% else %>
         <% book.comments.each do |comment| %>
           <div class="comment">
+              <form id="form" data-book-id="<%= @book.id %>">
             <div class="comment-user">
               <strong><%= comment.user.nickname %>：</strong>
             </div>
             <div class="comment-text">
               <%= simple_format(comment.text) %>
             </div>
+              </form>
           </div>
         <% end %>
       <% end %>

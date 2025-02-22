@@ -1,5 +1,13 @@
+
 function post() {
   const form = document.getElementById("form");
+
+  if (!form) {
+    console.error("Error: #form が見つかりません");
+    return;
+  }
+
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const formData = new FormData(form);
