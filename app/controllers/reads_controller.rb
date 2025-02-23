@@ -47,8 +47,8 @@ class ReadsController < ApplicationController
                                  partial: 'comments/hidden_toggle_element',
                                  locals: { book: @book }),
             turbo_stream.replace("read-count-#{@book.id}",
-                                 partial: 'books/read_count',
-                                 locals: { book: @book })
+                               partial: 'books/read_count',
+                               locals: { book: @book }) 
           ]
         end
       else
