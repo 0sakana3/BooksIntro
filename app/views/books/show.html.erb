@@ -95,15 +95,16 @@
 </div>
 <% end %>
 
-<div class="read_count">読んだ人数：<%= @book.reads.count %></div>
+<div id="read-count-<%= @book.id %>" class="read_count">読んだ人数：<%= @book.reads.count %>
+</div>
  </div>
  </div>
- </div>
-      </div>
+  </div>
+   </div>
 
-<!-- コメントフォーム & リストを含むエリア -->
+<!-- コメントフォーム & リスト -->
 <div id="toggle-element-<%= @book.id %>">
-  <% if @book.read_by?(current_user) %>
+  <% if @book.read_by?(current_user) || @book.user_id == current_user.id %>
     <%= render partial: "comments/toggle_element", locals: { book: @book } %>
   <% else %>
     <%= render partial: "comments/hidden_toggle_element", locals: { book: @book } %>
