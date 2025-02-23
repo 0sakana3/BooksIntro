@@ -1,0 +1,8 @@
+<div id="toggle-element-<%= book.id %>" class="toggle-element">
+  <div class="content_comment">
+    <%= render partial: "comments/comment_form", locals: { book: book } %>
+  </div>
+  <div class="content_comment">
+    <%= render partial: "comments/comment_list", locals: { book: book } %>
+  </div>
+</div>

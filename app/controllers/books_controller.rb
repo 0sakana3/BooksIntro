@@ -18,7 +18,6 @@ class BooksController < ApplicationController
         render :new,  status: :unprocessable_entity
     end
   end
-
   def show
     @comment = Comment.new
     @comments = @book.comments.includes(:user)
