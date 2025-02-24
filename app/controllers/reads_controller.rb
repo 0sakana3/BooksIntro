@@ -5,17 +5,17 @@ class ReadsController < ApplicationController
   
     respond_to do |format|
       if read.save
-        @book.reload # データを最新にする
+        @book.reload
         format.turbo_stream do
           render turbo_stream: [
             turbo_stream.replace("read-btn-#{@book.id}", 
                                  partial: 'reads/read',
                                  locals: { book: @book }),
-            turbo_stream.replace("toggle-element-#{@book.id}", 
-                                 partial: 'comments/toggle_element',
-                                 locals: { book: @book }),
             turbo_stream.replace("read-count-#{@book.id}",
                                  partial: 'books/read_count',
+                                 locals: { book: @book }),
+            turbo_stream.replace("toggle-element-#{@book.id}", 
+                                 partial: 'comments/toggle_element',
                                  locals: { book: @book })
           ]
         end
@@ -37,18 +37,18 @@ class ReadsController < ApplicationController
   
     respond_to do |format|
       if read&.destroy
-        @book.reload # 追加: データを最新の状態に更新
+        @book.reload
         format.turbo_stream do
           render turbo_stream: [
             turbo_stream.replace("read-btn-#{@book.id}", 
                                  partial: 'reads/read',
                                  locals: { book: @book }),
-            turbo_stream.replace("toggle-element-#{@book.id}", 
-                                 partial: 'comments/hidden_toggle_element',
-                                 locals: { book: @book }),
             turbo_stream.replace("read-count-#{@book.id}",
                                partial: 'books/read_count',
-                               locals: { book: @book }) 
+                               locals: { book: @book }) ,
+            turbo_stream.replace("toggle-element-#{@book.id}", 
+                                 partial: 'comments/hidden_toggle_element',
+                                 locals: { book: @book })
           ]
         end
       else
