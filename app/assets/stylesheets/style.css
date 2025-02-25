@@ -3,6 +3,8 @@
 
 header{
   position: fixed; 
+  top: 0;
+  left: 0;
   background-color: #73705F;
   height: 65px;
   width: 100%;
@@ -62,6 +64,8 @@ header{
 /* ページ */
 
 body {
+  overflow-x: hidden; 
+  min-height: 100vh; 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -376,11 +380,10 @@ justify-content: center;
 
 .detail_page_inner{
   background-color: #FFFFFF;
-  margin-top:  40px ;
-  padding: 10px 50px ;
+  padding: 50px 50px 10px 50px;
   height: auto;
   width: 80%;
-  border-radius: 0px 0px 0px 100px ;
+  border-radius: 5px ;
   box-shadow: 2px 2px 4px gray;
 }
 
@@ -552,7 +555,7 @@ font-size: 16px;
   margin-top: 16px;
 }
 
-.own-book-label{
+.books-read{
   font-size: 16px;
     padding: 8px 16px;
     margin: 0 10px;

@@ -1,9 +1,7 @@
 <% if user_signed_in? && @book.user_id != current_user.id %> 
 <% if current_user.reads.exists?(book: @book) %>
   <% if read = current_user.reads.find_by(book: @book) %>
-    <%= link_to "読んだよ！", book_read_path(@book, read), 
-        data: { turbo_method: :delete, toggle_state: "read", url: book_read_path(@book, read) }, 
-        class: "toggle-button book_reads", id: "toggle-btn-#{@book.id}" %>
+        <p class="books-read" id="read-btn-<%= @book.id %>">この本を読みました！</p>
   <% end %>
 <% else %>
   <%= link_to "読んだ？", book_reads_path(@book), 

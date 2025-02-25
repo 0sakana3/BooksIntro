@@ -86,7 +86,7 @@
 
 <% if user_signed_in? %>
   <% if @book.user_id == current_user.id %>
-    <span class="own-book-label">あなたの紹介した本です</span>
+    <p class="books-read">あなたの紹介した本です</p>
   <% end %>
 
   <div class="read-btn toggle-button">
