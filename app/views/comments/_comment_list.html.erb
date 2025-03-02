@@ -1,0 +1,27 @@
+<div class="comment_form-text">
+  <div class="comment-title">
+    <%= "コメント一覧" %>
+  </div>
+  <hr class="hr2">
+
+  <div class="comment_list">
+    <div class="comments">
+      <% if book.comments.empty? %>
+        <p class="explanation">まだコメントはありません。紹介された本の内容についての感想コメントを投稿しましょう！</p>
+      <% else %>
+        <% book.comments.each do |comment| %>
+          <div class="comment">
+              <form id="form" data-book-id="<%= @book.id %>">
+            <div class="comment-user">
+              <strong><%= comment.user.nickname %>：</strong>
+            </div>
+            <div class="comment-text">
+              <%= simple_format(comment.text) %>
+            </div>
+              </form>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
