@@ -329,6 +329,10 @@ h2{
   height: auto;
 }
 
+.books-lists_title{
+  margin: 0;
+}
+
 .books-lists{
 display: flex;
 flex-wrap: wrap;
