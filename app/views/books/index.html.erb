@@ -60,7 +60,7 @@
         <% if @books.present? %>
           <% @books.each do |book| %>
       <li class='books-list'>
-        <%= link_to book_path(book.id),class:"book-link" do %>
+        <%= link_to book_path(book.id), class:"book-link" do %>
         <div class='book-img-content'>
         <%= image_tag "https://booksintro2025.s3.ap-northeast-1.amazonaws.com/default_image.png", size: "200x200" %>
         </div>
