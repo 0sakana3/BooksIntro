@@ -5,7 +5,7 @@ RSpec.describe Read, type: :model do
     @user = FactoryBot.create(:user)
     another_user = FactoryBot.create(:user)
 
-    @book = FactoryBot.create(:book, user: another_user)  
+    @book = FactoryBot.create(:book, user: another_user)
     @read = FactoryBot.build(:read, user: @user, book: @book)
     sleep(0.2)
   end
@@ -40,13 +40,13 @@ RSpec.describe Read, type: :model do
         expect(read.errors.full_messages).to include('User cannot mark your own book as read')
       end
       it '同一user_idが同一のbook.idを読んだよ！できない' do
-        first_read = FactoryBot.create(:read, user: @user, book: @book)
+        FactoryBot.create(:read, user: @user, book: @book)
 
         second_read = FactoryBot.build(:read, user: @user, book: @book)
 
         expect(second_read).not_to be_valid
         expect(second_read.errors.full_messages).to include('User has already read this book')
+      end
     end
   end
-end
 end

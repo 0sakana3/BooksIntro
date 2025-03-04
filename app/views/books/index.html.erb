@@ -54,15 +54,15 @@
     <div class="under">
     <div class="under_page">
     <div class="introduction">
-      <P>紹介図書</P>
+      <h2 class="books-lists_title">紹介図書</h2>
     </div>
       <div class="books-lists">
         <% if @books.present? %>
           <% @books.each do |book| %>
       <li class='books-list'>
-        <%= link_to book_path(book.id),class:"book-link" do %>
+        <%= link_to book_path(book.id), class:"book-link" do %>
         <div class='book-img-content'>
-        <%= book_image_tag(book) %>
+          <%= book_image_tag(book) %>
         </div>
         <div class='book-info'>
           <h3 class='book-title'>
@@ -86,7 +86,7 @@
         <%= link_to new_book_path, class: "book-link" do %>
       <li class='books-list'>
         <%=  "本を紹介しよう！" %>
-        <%= image_tag "default_image.png", size: "200x200" %>
+        <%= image_tag "https://booksintro2025-defaults.s3.ap-northeast-1.amazonaws.com/default_image.png", size: "200x200" %>
         <div class='book-img-content'>
         <%=  "画像や" %>
         </div>

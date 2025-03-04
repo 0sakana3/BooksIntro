@@ -6,7 +6,7 @@ FactoryBot.define do
     detail             { Faker::Lorem.sentence }
     recommended        { Faker::Lorem.sentence }
     reference          { Faker::Internet.url }
-    
+
     association :user
 
     after(:build) do |book|

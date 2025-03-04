@@ -97,6 +97,9 @@
 
 <div id="read-count-<%= @book.id %>" class="read_count">読んだ人数：<%= @book.reads.count %></div>
  </div>
+ <div class="index-btn">
+   <%= link_to 'もどる', books_path, class: "index_link" %>
+</div>
  </div>
   </div>
    </div>

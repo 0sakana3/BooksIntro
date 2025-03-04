@@ -2,19 +2,19 @@ class ReadsController < ApplicationController
   def create
     @book = Book.find(params[:book_id])
     read = current_user.reads.build(book: @book)
-  
+
     respond_to do |format|
       if read.save
         @book.reload
         format.turbo_stream do
           render turbo_stream: [
-            turbo_stream.replace("read-btn-#{@book.id}", 
+            turbo_stream.replace("read-btn-#{@book.id}",
                                  partial: 'reads/read',
                                  locals: { book: @book }),
             turbo_stream.replace("read-count-#{@book.id}",
                                  partial: 'books/read_count',
                                  locals: { book: @book }),
-            turbo_stream.replace("toggle-element-#{@book.id}", 
+            turbo_stream.replace("toggle-element-#{@book.id}",
                                  partial: 'comments/toggle_element',
                                  locals: { book: @book })
           ]
@@ -34,19 +34,19 @@ class ReadsController < ApplicationController
   def destroy
     @book = Book.find(params[:book_id])
     read = Read.find_by(book: @book, user: current_user)
-  
+
     respond_to do |format|
       if read&.destroy
         @book.reload
         format.turbo_stream do
           render turbo_stream: [
-            turbo_stream.replace("read-btn-#{@book.id}", 
+            turbo_stream.replace("read-btn-#{@book.id}",
                                  partial: 'reads/read',
                                  locals: { book: @book }),
             turbo_stream.replace("read-count-#{@book.id}",
-                               partial: 'books/read_count',
-                               locals: { book: @book }) ,
-            turbo_stream.replace("toggle-element-#{@book.id}", 
+                                 partial: 'books/read_count',
+                                 locals: { book: @book }),
+            turbo_stream.replace("toggle-element-#{@book.id}",
                                  partial: 'comments/hidden_toggle_element',
                                  locals: { book: @book })
           ]
