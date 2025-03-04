@@ -12,5 +12,5 @@ class User < ApplicationRecord
 
   validates :password,
             format: { with: VALID_PASSWORD_REGEX, message: 'Must contain both half-width alphanumeric characters' }
-  validates :nickname, presence: true
+  validates :nickname, presence: true, length: { maximum: 16 }
 end
