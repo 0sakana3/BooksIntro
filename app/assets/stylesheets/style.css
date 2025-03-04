@@ -25,6 +25,9 @@ header{
   letter-spacing: 1.8px;
   font-weight: 100;
   text-decoration: none;
+  display: inline-block; 
+  width: 200px;
+  min-width: 200px;
 }
 
 .hed_lists {
@@ -34,7 +37,8 @@ header{
 }
 
 .login_name{
-  width: 100px;
+  width: fit-content;
+  min-width: 150px;
   height: 30px;
   margin: 25px 10px;
   }
