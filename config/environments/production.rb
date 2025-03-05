@@ -90,7 +90,12 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # アセットのコンパイルを無効にする (プリコンパイルされたアセットを使用)
+config.assets.compile = false
+
+# アセットのプリコンパイルを有効にする
+config.assets.precompile += %w( read_toggle.js )
   
 end
 
-Rails.application.config.assets.precompile += %w( read_toggle.js )
