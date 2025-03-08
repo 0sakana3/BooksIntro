@@ -5,6 +5,3 @@ import "./read_toggle"
 import "comment"
 import "./rails-ujs"
 
-import * as Rails from "@rails/ujs"
-Rails.start()
-
