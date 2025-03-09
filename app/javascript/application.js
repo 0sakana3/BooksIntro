@@ -4,4 +4,3 @@ import "controllers"
 import "./read_toggle"
 import "comment"
 import "./rails-ujs"
-
