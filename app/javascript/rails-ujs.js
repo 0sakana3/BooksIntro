@@ -1,5 +1,7 @@
 import * as Rails from "@rails/ujs"
 document.addEventListener("DOMContentLoaded", () => {
-  window.Rails = Rails;
-  Rails.start();
+  if (window.Rails === undefined) {
+    window.Rails = Rails;
+    Rails.start();
+  }
 });
