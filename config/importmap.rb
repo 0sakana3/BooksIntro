@@ -1,5 +1,5 @@
 # Pin npm packages by running ./bin/importmap
-pin "@rails/ujs", to: "https://cdn.jsdelivr.net/npm/@rails/ujs@7.1.4/lib/assets/compiled/rails-ujs.js"
+pin "@rails/ujs", to: "rails-ujs.js"
 pin "application"
 pin "@hotwired/turbo-rails", to: "turbo.min.js"
 pin "@hotwired/stimulus", to: "stimulus.min.js"

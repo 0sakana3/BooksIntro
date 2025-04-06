@@ -628,3 +628,6 @@ Released under the MIT license
   }
   return Rails;
 }));
+
+window.Rails = Rails;
+export { Rails };
