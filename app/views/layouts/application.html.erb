@@ -20,7 +20,7 @@
       <li><%= link_to current_user.nickname, root_path, class: "user-nickname" %> </li>
       </div>
       <div class="logout_button">
-      <li><%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, class: "logout" %></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
       </div>
          </ul>
       <% else %>
