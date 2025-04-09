@@ -629,9 +629,5 @@ Released under the MIT license
   return Rails;
 }));
 
-import * as Rails from "@rails/ujs";
-Rails.start();
 window.Rails = Rails;
-
-export { Rails };
 export default Rails;
