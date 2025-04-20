@@ -36,11 +36,11 @@ PASS：2222
 [![Image from Gyazo](https://i.gyazo.com/0e8c41648ebf04bee29e51de18007cbb.png)](https://gyazo.com/0e8c41648ebf04bee29e51de18007cbb)
 新規登録orログインが可能
 
-### 新規登録
+### 新規登録画面
 [![Image from Gyazo](https://i.gyazo.com/787aaedb5fb87cd61c37851ad68ad6b9.gif)](https://gyazo.com/787aaedb5fb87cd61c37851ad68ad6b9)
 ニックネーム、メールアドレス、パスワードを入力でアカウント作成
 
-### ログイン
+### ログイン画面
 [![Image from Gyazo](https://i.gyazo.com/b799fa128696d3f459bec7fa59880eb4.png)](https://gyazo.com/b799fa128696d3f459bec7fa59880eb4)
 メールアドレスとパスワードでログイン可能
 
